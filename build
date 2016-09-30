@@ -1,0 +1,28 @@
+#!/usr/bin/env xonsh
+import os
+import zipfile
+
+OUTPUT = 'lambda.zip'
+EXCLUDE = [
+    OUTPUT,
+    '.git',
+]
+
+#BASE = os.path.dirname(__file__)
+BASE = '.'
+
+with zipfile.ZipFile(OUTPUT, 'w') as bundle:
+    for dirname, dirs, files in os.walk(BASE):
+        # Do exclusions
+        for e in EXCLUDE:
+            if e in dirs:
+                dirs.remove(e)
+            if e in files:
+                files.remove(e)
+
+        aname = dirname[len(BASE)+1:]
+
+        for fn in files:
+            bundle.write(os.path.join(dirname, fn), os.path.join(aname, fn))
+
+![aws lambda update-function-code --zip-file fileb://lambda.zip --function-name=prlint]
