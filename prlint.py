@@ -14,7 +14,7 @@ import ConfigParser
 import json
 import re
 
-NEWS = re.compile(r"news/.*\.rst")
+CHECKS = []
 
 conf = ConfigParser.SafeConfigParser()
 conf.read(['xlint.conf'])
@@ -43,8 +43,8 @@ def lint(event, context):
 
         errors = []
         try:
-            if not any(NEWS.match(f.filename) for f in pullreq.get_files()):
-                errors += ['No news item']
+            for cfunc in CHECKS:
+                errors += list(cfunc(commit, pullreq))
         except Exception, e:
             commit.create_status('error', description=str(e), context='lint/xonsh')
             raise
@@ -58,3 +58,12 @@ def lint(event, context):
     else:
         print("Not my event")
         return {}
+
+
+NEWS = re.compile(r"news/.*\.rst")
+
+def has_news(commit, pullreq):
+    if not any(NEWS.match(f.filename) for f in pullreq.get_files()):
+        yield 'No news item'
+
+CHECKS += [has_news]
