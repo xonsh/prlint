@@ -1,2 +1,6 @@
 config:
   aws:region: us-east-2
+  prlint:github-secret:
+    secure: AAABAHbogO4+Ju0rNPOR9IZ+Kd40ozbiERDDYX6VBfrmP0ltyggy7XtjXl9lMfU=
+  prlint:github-token:
+    secure: AAABAAwyiQ4dRbyE428HEKCXBfWLkVzWjLuYVuSAlufxuJBauYcNlemOy7RertuJdpXtb2tebqDcDdtLQ7S0e6v0gnCqqCVz

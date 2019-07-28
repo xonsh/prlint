@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 pygithub = "*"
+flask = "*"
+aws-wsgi = {git = "https://github.com/astronouth7303/awsgi.git",ref = "merged"}
+github-webhook = "*"
 
 [requires]
 python_version = "3.7"
