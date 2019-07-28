@@ -1,3 +1,1 @@
-*.sublime-workspace
-xlint.conf
-lambda.zip
+__pycache__/

@@ -1,0 +1,3 @@
+name: prlint
+runtime: python
+description: Xonsh PR linting

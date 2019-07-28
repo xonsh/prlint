@@ -1,0 +1,4 @@
+pulumi>=0.16.4
+pulumi-aws
+git+https://github.com/dingbots/putils.git
+git+https://github.com/dingbots/deplumi.git
