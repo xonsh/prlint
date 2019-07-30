@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e66c0fa3e611d2a50af290c193073c7ed8ae528e067ece57ca07cb86b05ddc25"
+            "sha256": "acc713bcda4d0a8c8344cb4b63248229bca56cfdfffa6ee6ef1cee8ffc5a6de8"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,7 +18,7 @@
     "default": {
         "aws-wsgi": {
             "git": "https://github.com/astronouth7303/awsgi.git",
-            "ref": "81f3305670b3a3e1b42d472b246b6baa4d3c102f"
+            "ref": "a14c620916112661c7d3a48935dd688246c9fc9f"
         },
         "certifi": {
             "hashes": [
