@@ -8,7 +8,7 @@ verify_ssl = true
 [packages]
 pygithub = "*"
 flask = "*"
-aws-wsgi = {git = "https://github.com/astronouth7303/awsgi.git",ref = "fix-elb"}
+aws-wsgi = "*"
 github-webhook = "*"
 
 [requires]
